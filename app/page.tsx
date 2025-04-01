@@ -61,11 +61,13 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+            <div className="bg-gray-800/50 p-4 sm:p-6 rounded-lg border border-gray-700">
               <h3 className="text-xl font-bold mb-4 text-red-400">Example: Version Mismatch</h3>
-              <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto text-sm">
-                <code className="language-javascript text-gray-300">
-{`// User has Next.js 15.2.1 installed
+              <div className="bg-gray-900 rounded-md">
+                <div className="overflow-x-auto">
+                  <pre className="p-4">
+                    <code className="text-sm text-gray-300 whitespace-pre">
+                      {`// User has Next.js 15.2.1 installed
 // But AI suggests code for Next.js 14.0.0:
 
 // pages/products/[id].js
@@ -79,7 +81,6 @@ export default function Product() {
   const [product, setProduct] = useState(null);
   
   // Outdated pattern leads to runtime errors
-  // and inefficient code generation
   useEffect(() => {
     if (id) {
       fetch(\`/api/products/\${id}\`)
@@ -91,15 +92,19 @@ export default function Product() {
   if (!product) return <div>Loading...</div>;
   // ...
 }`}
-                </code>
-              </pre>
+                    </code>
+                  </pre>
+                </div>
+              </div>
             </div>
             
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+            <div className="bg-gray-800/50 p-4 sm:p-6 rounded-lg border border-gray-700">
               <h3 className="text-xl font-bold mb-4 text-green-400">Our Vision</h3>
-              <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto text-sm">
-                <code className="language-javascript text-gray-300">
-{`// With ODocs Registry:
+              <div className="bg-gray-900 rounded-md">
+                <div className="overflow-x-auto">
+                  <pre className="p-4">
+                    <code className="text-sm text-gray-300 whitespace-pre">
+                      {`// With ODocs Registry:
 // 1. Detect framework version: Next.js 15.2.1
 // 2. Pull appropriate documentation
 // 3. AI generates correct code:
@@ -108,14 +113,17 @@ export default function Product() {
 // (Using current App Router)
 import { notFound } from 'next/navigation';
 
-// Modern server-side data fetching
 async function getProduct(id) {
-  const res = await fetch(\`https://api.example.com/products/\${id}\`);
+  const res = await fetch(
+    \`https://api.example.com/products/\${id}\`
+  );
   if (!res.ok) return undefined;
   return res.json();
 }
 
-export default async function ProductPage({ params }) {
+export default async function ProductPage({ 
+  params 
+}) {
   const product = await getProduct(params.id);
   
   if (!product) {
@@ -123,13 +131,14 @@ export default async function ProductPage({ params }) {
   }
   // ...
 }`}
-                </code>
-              </pre>
+                    </code>
+                  </pre>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* Project Description */}
       <section id="vision" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -190,8 +199,8 @@ export default async function ProductPage({ params }) {
             Technical Approach
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            <div className="order-1 md:order-1 w-full">
               <ol className="relative border-l border-gray-600">
                 <li className="mb-10 ml-6">
                   <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full -left-4 text-white font-bold">1</span>
@@ -224,10 +233,11 @@ export default async function ProductPage({ params }) {
               </ol>
             </div>
             
-            <div className="relative">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-xl">
-              <pre className="text-sm overflow-x-auto font-mono text-gray-300">
-{`# Start the ODocs server (auto-detects frameworks)
+            <div className="order-2 md:order-2 w-full">
+              <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-xl">
+                <div className="overflow-x-auto">
+                  <pre className="p-4 text-sm text-gray-300">
+                    {`# Start the ODocs server (auto-detects frameworks)
 $ odocs serve
 
 → Scanning package.json...
@@ -249,9 +259,9 @@ $ curl -X POST http://localhost:3820/api/query \\
 
 # AI assistants can also connect directly
 # via Model Context Protocol (MCP)
-connect_mcp("localhost:3820/mcp")
-`}
-                </pre>
+connect_mcp("localhost:3820/mcp")`}
+                  </pre>
+                </div>
               </div>
               <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full filter blur-3xl z-0"></div>
             </div>
@@ -291,15 +301,6 @@ connect_mcp("localhost:3820/mcp")
                   Highlight breaking changes between versions
                 </li>
               </ul>
-              {/* <Link 
-                href="/contribute/framework-maintainers" 
-                className="text-blue-400 hover:text-blue-300 transition inline-flex items-center"
-              >
-                Framework Maintainer Guide
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link> */}
             </div>
             
             <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
@@ -326,15 +327,6 @@ connect_mcp("localhost:3820/mcp")
                   Create AI integration protocols
                 </li>
               </ul>
-              {/* <Link 
-                href="/contribute/developers" 
-                className="text-purple-400 hover:text-purple-300 transition inline-flex items-center"
-              >
-                Developer Contribution Guide
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link> */}
             </div>
           </div>
         </div>
