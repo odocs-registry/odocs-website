@@ -1,0 +1,211 @@
+# Why Your AI Coding Assistant Is Generating Broken Code (And How ODocs Will Fix It)
+
+<div className="text-gray-500 mb-4 flex items-center">
+  <span>April 2, 2025</span>
+  <span className="mx-2">•</span>
+  <span>5 min read</span>
+</div>
+
+<div className="flex items-center mb-8 pb-8 border-b border-gray-700">
+  <div className="w-10 h-10 rounded-full overflow-hidden mr-4">
+    <img src="/images/odocs-logo.svg" alt="ODocs Team" width={40} height={40} />
+  </div>
+  <div>
+    <div className="font-medium">Gokul Sivanesan</div>
+    <div className="text-sm text-gray-400">Core Contributors</div>
+  </div>
+</div>
+
+## TL;DR
+AI coding assistants are great, but they often generate broken code because they don't know which version of a framework or library you're using. This is what we call "version blindness" - the inability of AI to detect or access documentation for your specific framework versions.
+
+ODocs is an open-source documentation registry initiative that works like Docker Hub, but for documentation instead of containers. It enables AI models to generate code compatible with the specific library versions you're using on the first try, reducing debugging time and improving developer experience.
+
+## The Problem Every Developer Using AI Faces
+Picture this: You're building a Next.js application from scratch with your favorite AI assistant. It suggests what looks like perfectly reasonable code. You implement it, run your app and... errors everywhere.
+
+Why?
+
+Here's a typical scenario:
+1. The AI assistant suggests: `npx create-next-app@latest` to create a new Next.js app.
+2. When the AI model was trained, "latest" was Next.js 14.0.
+3. But when you run the command today, you get Next.js 15.2.
+4. Then the AI keeps suggesting code patterns that worked for 14.0 but are incompatible with 15.2.
+
+This isn't a rare edge case—it happens constantly across every programming ecosystem:
+
+- React hooks that worked in 17.0 but throw errors in 18.2
+- Django patterns that were best practice in 4.2 but deprecated in 5.0
+- Spring Boot configurations that are entirely restructured between versions
+
+## AI's Fundamental Limitation: Version Blindness
+Even the latest, most advanced AI models suffer from this problem: they can't determine which specific version of a library you're using unless explicitly told, and they don't automatically have access to the correct documentation for that version.
+
+While some models can access documentation when manually provided or through web search capabilities, these approaches require extra effort and don't always return the correct version-specific information.
+
+The consequences are frustrating and time-consuming:
+
+1. Wasted debugging time fixing version incompatibilities
+2. Security vulnerabilities from outdated patterns
+3. Missing optimizations introduced in newer versions
+4. Incorrect error handling from mismatched API responses
+
+Currently, developers work around this by manually copying documentation into their prompts, which is tedious, error-prone, and doesn't scale.
+
+## Introducing ODocs: Open Documentation Registry for AI Code Generation
+ODocs solves this problem through:
+
+1. **Documentation Registry:** A centralized, open repository where framework maintainers publish version-specific, LLM-optimized documentation (e.g., `nextjs:latest`, `nextjs:15.2`, `django:5.0`)
+
+2. **Framework Detection:** Tools that scan your project files to identify which frameworks and versions you're using
+
+3. **Vector Database:** Local embedding of documentations for efficient retrieval, reducing token usage and enabling precise search capabilities
+
+4. **AI Integration:** Connectors that feed the right documentation to your AI assistant through various methods (MCP, Tool-based integration, API)
+
+## Architecture Overview
+The ODocs system connects your development environment with AI assistants through these components:
+
+- **Registry Protocol:** Standardized formats for publishing, versioning, and retrieving documentation
+- **Detection Tools:** Cross-language scanners that identify frameworks from package.json, requirements.txt, etc.
+- **Vector Database:** Locally embedded documentation for efficient semantic search and reduced token usage
+- **Integration Layer:** Lightweight servers that connect AI assistants to the right documentation context
+- **IDE Extensions:** Direct integration into your development workflow
+
+## How It Works in Practice
+When you use IDE extensions or run `odocs serve` in your project:
+
+```bash
+# Start the ODocs server (auto-detects frameworks)
+$ odocs serve
+
+→ Scanning package.json...
+→ Detected frameworks:
+  - nextjs:15.2.1
+  - react:18.2.0
+  - tailwindcss:3.3.0
+
+→ Pulling documentation for detected frameworks...
+→ Documentation pulled successfully
+
+→ Embedding documentations for detected frameworks...
+→ Documentation embedded successfully
+
+→ API server running at http://localhost:2803/api
+→ MCP server running at http://localhost:2803/mcp
+```
+
+The system:
+1. Automatically scans your project files
+2. Detects which frameworks and versions you're using
+3. Pulls the relevant documentation from the registry
+4. Embeds documentation in a local vector database for efficient retrieval
+5. Starts a local server with API and MCP endpoints
+6. Your AI assistant connects to these endpoints, using semantic search to find precisely relevant documentation instead of loading entire docs
+
+The result is code generation that works with your specific version on the first try.
+
+## See The Difference
+
+### Without ODocs
+```javascript
+
+// User installed Next.js 15.2 using `npx create-next-app@latest`
+// AI might generate Pages Router code for a Next.js app
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+export default function Product() {
+  const router = useRouter();
+  const { id } = router.query;
+  const [product, setProduct] = useState(null);
+  
+  // Client-side fetching pattern from older Next.js
+  useEffect(() => {
+    if (id) {
+      fetch(`/api/products/${id}`)
+        .then(res => res.json())
+        .then(data => setProduct(data));
+    }
+  }, [id]);
+
+  if (!product) return <div>Loading...</div>;
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>${product.price}</p>
+    </div>
+  );
+}
+```
+
+### With ODocs
+```javascript
+
+// Retrives version-specific documentation from ODocs
+// With version-specific knowledge, AI generates App Router code
+import { notFound } from 'next/navigation';
+
+// Server component with built-in data fetching
+async function getProduct(id) {
+  const res = await fetch(`https://api.example.com/products/${id}`);
+  if (!res.ok) return undefined;
+  return res.json();
+}
+
+export default async function ProductPage({ params }) {
+  const product = await getProduct(params.id);
+  
+  // Modern error handling
+  if (!product) {
+    notFound();
+  }
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>${product.price}</p>
+    </div>
+  );
+}
+```
+
+## Our Vision Forward
+
+ODocs is currently in the early stages of development, and we're focused on building a strong foundation:
+
+1. Defining the documentation registry protocols
+2. Standardizing LLM-optimized documentation formats
+3. Building the framework detection tools
+4. Implementing vector embedding for efficient documentation retrieval
+5. Creating AI integration layers that leverage semantic search
+
+By using vector embeddings and semantic search, ODocs significantly reduces the token count needed in the AI's context window. Rather than sending entire documentation sets to the AI, we can precisely retrieve only the most relevant sections, making the system more efficient and cost-effective.
+
+## How You Can Get Involved
+
+### For Framework Maintainers
+- Help define LLM-optimized documentation standards for your framework
+- Provide insights on versioning challenges specific to your ecosystem
+- Collaborate on tooling for automatic documentation updates with releases
+
+### For Developers
+- Contribute to the core ODocs infrastructure
+- Test the framework detection in your projects
+- Help build IDE extensions and integrations
+
+### For AI Users
+- Share your experiences with version mismatch issues
+- Participate in testing early versions
+- Provide feedback on effectiveness in real-world scenarios
+
+## Join Us!
+
+We believe ODocs can significantly improve the developer experience with AI assistants by solving the version mismatch problem once and for all. But we can't do it alone!
+
+Visit [ODocs.dev](https://odocs.dev) or [ODocs GitHub repository](https://github.com/odocs-dev/odocs) to learn more and get involved. Together, we can make AI-assisted coding more accurate and efficient for everyone.
+
+---
+
+*ODocs: The right documentation for the right version, every time.*

@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Link from 'next/link';
+import { EXTERNAL_LINKS } from '@/components/constants';
 
 export const metadata = {
   title: 'ODocs - Open Documentation Registry for AI Code Generation',
@@ -33,7 +34,8 @@ export default function Home() {
               Join the Initiative
             </Link>
             <Link 
-              href="https://github.com/odocs-dev/odocs" 
+              href={EXTERNAL_LINKS.GITHUB_REPO} 
+              target="_blank" 
               className="px-8 py-4 rounded-md bg-blue-600 hover:bg-blue-700 transition text-lg font-medium"
             >
               Star us on GitHub
@@ -62,7 +64,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div className="bg-gray-800/50 p-4 sm:p-6 rounded-lg border border-gray-700">
-              <h3 className="text-xl font-bold mb-4 text-red-400">Example: Version Mismatch</h3>
+              <h3 className="text-xl font-bold mb-4 text-red-400">Example: Version Blindness</h3>
               <div className="bg-gray-900 rounded-md">
                 <div className="overflow-x-auto">
                   <pre className="p-4">
@@ -165,7 +167,7 @@ export default async function ProductPage({
                   <strong>Developers</strong> can &quot;pull&quot; the exact documentations they need into their AI coding workflows
                 </li>
                 <li>
-                  <strong>AI assistants</strong> connect to the ODocs registry to access version-specific documentations
+                  <strong>AI assistants</strong> connects to the ODocs server to access and search version-specific documentations
                 </li>
                 <li>
                   <strong>Result:</strong> Accurate, version-appropriate code generation across all programming ecosystems
@@ -249,8 +251,11 @@ $ odocs serve
 → Pulling documentation for detected frameworks...
 → Documentation pulled successfully
 
-→ API server running at http://localhost:3820/api
-→ MCP server running at http://localhost:3820/mcp
+→ Embedding documentations for detected frameworks...
+→ Documentation embedded successfully
+
+→ API server running at http://localhost:2803/api
+→ MCP server running at http://localhost:2803/mcp
 
 # In another terminal or application
 # Connect to ODocs via API

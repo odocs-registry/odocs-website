@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { EXTERNAL_LINKS } from "./constants";
 
 interface HeaderProps {
   isHomePage?: boolean;
@@ -60,9 +61,10 @@ export default function Header({ isHomePage = false }: HeaderProps) {
               Join the Initiative
             </Link>
             <Link
-              href="https://github.com/odocs-dev/odocs"
+              href={EXTERNAL_LINKS.GITHUB_REPO}
               className="p-2 rounded-md border border-gray-700 hover:border-blue-500 transition"
               aria-label="GitHub Repository"
+              target="_blank" 
             >
               <svg
                 width="24"
