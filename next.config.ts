@@ -10,7 +10,13 @@ const nextConfig: NextConfig = {
   // Configure MDX
   experimental: {
     mdxRs: true,
-  }
+  },
+
+  // for Cloudflare
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 };
 
 const withMDX = createMDX({
