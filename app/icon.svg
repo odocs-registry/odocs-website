@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1056)"><rect width="1000" height="1000" fill="#1e40af"></rect><g transform="matrix(31.25,0,0,31.25,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="32" height="32"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="16" fill="#1e40af"></circle>
+  
+  <!-- Document Stack (3 documents) -->
+  <g transform="translate(7, 6)">
+    <!-- Back document -->
+    <rect x="0" y="2" width="14" height="18" rx="1" fill="#3b82f6" transform="rotate(-5, 7, 11)"></rect>
+    
+    <!-- Middle document -->
+    <rect x="2" y="1" width="14" height="18" rx="1" fill="#60a5fa" transform="rotate(-2, 9, 10)"></rect>
+    
+    <!-- Front document with code lines -->
+    <rect x="4" y="0" width="14" height="18" rx="1" fill="#93c5fd"></rect>
+    
+    <!-- Version indicator at the top -->
+    <rect x="6" y="2" width="10" height="2" rx="1" fill="#1e40af"></rect>
+    <text x="7.2" y="3.7" font-family="Arial, sans-serif" font-size="1.8" font-weight="bold" fill="white" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">v2.0</text>
+    
+    <!-- Code lines -->
+    <line x1="7" y1="6" x2="15" y2="6" stroke="#1e40af" stroke-width="1"></line>
+    <line x1="7" y1="8.5" x2="13" y2="8.5" stroke="#1e40af" stroke-width="1"></line>
+    <line x1="7" y1="11" x2="15" y2="11" stroke="#1e40af" stroke-width="1"></line>
+    <line x1="7" y1="13.5" x2="12" y2="13.5" stroke="#1e40af" stroke-width="1"></line>
+    <line x1="7" y1="16" x2="14" y2="16" stroke="#1e40af" stroke-width="1"></line>
+  </g>
+</svg></svg></g></g><defs><clipPath id="SvgjsClipPath1056"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs></svg>
