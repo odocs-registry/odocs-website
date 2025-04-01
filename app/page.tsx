@@ -66,7 +66,7 @@ export default function Home() {
               <div className="bg-gray-900 rounded-md">
                 <div className="overflow-x-auto">
                   <pre className="p-4">
-                    <code className="text-sm text-gray-300 whitespace-pre">
+                    <code className="text-sm text-gray-300 whitespace-pre-wrap break-words">
                       {`// User has Next.js 15.2.1 installed
 // But AI suggests code for Next.js 14.0.0:
 
@@ -103,7 +103,7 @@ export default function Product() {
               <div className="bg-gray-900 rounded-md">
                 <div className="overflow-x-auto">
                   <pre className="p-4">
-                    <code className="text-sm text-gray-300 whitespace-pre">
+                    <code className="text-sm text-gray-300 whitespace-pre-wrap break-words">
                       {`// With ODocs Registry:
 // 1. Detect framework version: Next.js 15.2.1
 // 2. Pull appropriate documentation
@@ -200,7 +200,7 @@ export default async function ProductPage({
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            <div className="order-1 md:order-1 w-full">
+            <div className="order-2 md:order-1 w-full">
               <ol className="relative border-l border-gray-600">
                 <li className="mb-10 ml-6">
                   <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full -left-4 text-white font-bold">1</span>
@@ -233,10 +233,10 @@ export default async function ProductPage({
               </ol>
             </div>
             
-            <div className="order-2 md:order-2 w-full">
-              <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-xl">
+            <div className="order-1 md:order-2 w-full">
+              <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-xl max-w-full">
                 <div className="overflow-x-auto">
-                  <pre className="p-4 text-sm text-gray-300">
+                  <pre className="p-4 text-sm text-gray-300 whitespace-pre-wrap break-words">
                     {`# Start the ODocs server (auto-detects frameworks)
 $ odocs serve
 
@@ -263,7 +263,7 @@ connect_mcp("localhost:3820/mcp")`}
                   </pre>
                 </div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full filter blur-3xl z-0"></div>
+              <div className="hidden md:block absolute -bottom-8 -right-8 w-64 h-64 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full filter blur-3xl z-0"></div>
             </div>
           </div>
         </div>

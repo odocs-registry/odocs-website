@@ -1,10 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 interface HeaderProps {
   isHomePage?: boolean;
 }
 
 export default function Header({ isHomePage = false }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header
       className={`container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center ${
@@ -13,7 +22,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
     >
       <Link
         href="/"
-        className="flex items-center"
+        className="flex items-center z-10"
       >
         <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
           ODocs
@@ -22,6 +31,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
 
       {isHomePage ? (
         <>
+          {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/blog"
@@ -42,7 +52,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
               Roadmap
             </Link>
           </nav>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 z-10">
             <Link
               href="#contribute"
               className="hidden sm:block px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 transition"
@@ -68,7 +78,59 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                 />
               </svg>
             </Link>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden p-2 rounded-md text-gray-400 hover:text-white focus:outline-none"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
+
+          {/* Mobile menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden fixed inset-0 z-0 bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center">
+              <nav className="flex flex-col items-center space-y-8 text-xl">
+                <Link
+                  href="/blog"
+                  className="hover:text-blue-400 transition"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/faq"
+                  className="hover:text-blue-400 transition"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="/roadmap"
+                  className="hover:text-blue-400 transition"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Roadmap
+                </Link>
+                <Link
+                  href="#contribute"
+                  className="px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-700 transition"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Join the Initiative
+                </Link>
+              </nav>
+            </div>
+          )}
         </>
       ) : (
         <Link
