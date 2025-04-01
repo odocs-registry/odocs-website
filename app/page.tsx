@@ -200,7 +200,7 @@ export default async function ProductPage({
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            <div className="order-2 md:order-1 w-full">
+            <div className="order-1 md:order-1 w-full">
               <ol className="relative border-l border-gray-600">
                 <li className="mb-10 ml-6">
                   <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full -left-4 text-white font-bold">1</span>
@@ -233,7 +233,7 @@ export default async function ProductPage({
               </ol>
             </div>
             
-            <div className="order-1 md:order-2 w-full">
+            <div className="order-2 md:order-2 w-full">
               <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-xl max-w-full">
                 <div className="overflow-x-auto">
                   <pre className="p-4 text-sm text-gray-300 whitespace-pre-wrap break-words">
