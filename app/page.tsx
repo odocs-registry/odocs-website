@@ -280,7 +280,16 @@ connect_mcp("localhost:3820/mcp")`}
       <section id="contribute" className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Join the Initiative
+            Join the Initiative in 
+            <Link 
+              href={EXTERNAL_LINKS.GITHUB_REPO} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository"
+              className="text-blue-400 hover:text-blue-300 ml-2"
+            >
+              GitHub
+            </Link>
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
