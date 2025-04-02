@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from 'next/font/google';
 import './globals.css'
+import { ThirdPartyComponents } from "@/components/third-party-components";
 
 // Initialize fonts with Latin subset
 const inter = Inter({
@@ -81,6 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${firaCode.variable}`}>
       <body className="font-sans antialiased">
+        <ThirdPartyComponents />
         {children}
       </body>
     </html>

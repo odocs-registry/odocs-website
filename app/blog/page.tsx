@@ -79,19 +79,16 @@ export default function BlogIndexPage() {
         <p className="text-gray-300 mb-6">
           Subscribe to our newsletter to receive the latest updates about ODocs development and best practices.
         </p>
-        <form className="flex flex-col sm:flex-row gap-4">
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
-            className="flex-grow px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button 
-            type="submit"
-            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition"
-          >
-            Subscribe
-          </button>
-        </form>
+        <button
+          data-tally-open="3qzp6d"
+          data-tally-layout="modal"
+          data-tally-auto-close="0"
+          data-tally-width="376"
+          data-tally-hide-title="1"
+          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition"
+        >
+          Subscribe!
+        </button>
       </div>
     </div>
   );

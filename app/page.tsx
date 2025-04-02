@@ -350,7 +350,7 @@ connect_mcp("localhost:3820/mcp")`}
             Sign up to stay updated on our progress and get involved.
           </p>
           
-          <div className="bg-gray-800/50 p-8 rounded-lg border border-gray-700">
+          {/* <div className="bg-gray-800/50 p-8 rounded-lg border border-gray-700">
             <form className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
@@ -380,7 +380,16 @@ connect_mcp("localhost:3820/mcp")`}
                 </button>
               </div>
             </form>
-          </div>
+          </div> */}
+          <button
+            className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition"
+            data-tally-open="mRjga9"
+            data-tally-layout="modal"
+            data-tally-auto-close="0"
+            data-tally-width="400"
+          >
+            Click to join the community!
+          </button>
         </div>
       </section>
 
