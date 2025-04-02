@@ -10,5 +10,5 @@ export const EXTERNAL_LINKS = {
   
   // Social media (currently commented out in usage)
   TWITTER: "https://twitter.com/odocs_dev",
-  DISCORD: "https://discord.gg/odocs"
+  DISCORD: "https://discord.gg/xQM2bSvZ"
 };

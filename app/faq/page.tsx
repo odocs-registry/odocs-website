@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { faqData } from './_data/faq-data';
 import FAQItem from './_components/FAQItem';
+import { EXTERNAL_LINKS } from '@/components/constants';
 
 export const metadata = {
   title: 'ODocs FAQ - Open Documentation Registry for AI Code Generation',
@@ -34,13 +35,19 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link 
-                href="https://github.com/odocs-dev/odocs/discussions"
+                href={`${EXTERNAL_LINKS.GITHUB_REPO}/discussions`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Repository"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition"
               >
                 Ask on GitHub
               </Link>
               <Link 
-                href="https://discord.gg/odocs"
+                href={EXTERNAL_LINKS.DISCORD}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord Community"
                 className="px-6 py-3 border border-gray-600 hover:border-blue-500 rounded-md text-white font-medium transition"
               >
                 Join Discord

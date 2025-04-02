@@ -36,6 +36,8 @@ export default function Home() {
             <Link 
               href={EXTERNAL_LINKS.GITHUB_REPO} 
               target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository"
               className="px-8 py-4 rounded-md bg-blue-600 hover:bg-blue-700 transition text-lg font-medium"
             >
               Star us on GitHub

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import { roadmapData } from './_data/roadmap-data';
 import RoadmapPhase from './_components/RoadmapPhase';
 import Link from 'next/link';
+import { EXTERNAL_LINKS } from '@/components/constants';
 
 export const metadata = {
   title: 'ODocs Project Roadmap',
@@ -38,7 +39,10 @@ export default function Roadmap() {
               Join us on GitHub to contribute to the discussion and help prioritize features.
             </p>
             <Link 
-              href="https://github.com/odocs-dev/odocs"
+              href={EXTERNAL_LINKS.GITHUB_REPO}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition inline-block"
             >
               Contribute on GitHub

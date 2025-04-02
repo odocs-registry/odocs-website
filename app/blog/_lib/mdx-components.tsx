@@ -23,9 +23,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       return (
         <a 
           href={href} 
-          className="text-blue-400 hover:text-blue-300 underline"
           target="_blank"
           rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300 underline"
         >
           {children}
         </a>

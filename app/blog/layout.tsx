@@ -79,9 +79,10 @@ export default function BlogLayout({
                 </p>
                 <Link 
                   href={EXTERNAL_LINKS.GITHUB_REPO}
-                  className="inline-block px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md text-white text-sm transition"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                  className="inline-block px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md text-white text-sm transition"
                 >
                   Star on GitHub
                 </Link>
