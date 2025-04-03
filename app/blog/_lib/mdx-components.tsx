@@ -31,9 +31,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </a>
       );
     },
-    ul: ({ children }) => <ul className="list-disc list-inside mb-4 ml-4 text-gray-300">{children}</ul>,
-    ol: ({ children }) => <ol className="list-decimal list-inside mb-4 ml-4 text-gray-300">{children}</ol>,
-    li: ({ children }) => <li className="mb-2">{children}</li>,
+    ul: ({ children }) => <ul className="list-disc pl-5 mb-4 text-gray-300">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal pl-5 mb-4 text-gray-300">{children}</ol>,
+    li: ({ children }) => <li className="mb-2 pl-1">{children}</li>,
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-blue-500 pl-4 italic mb-4 text-gray-300">
         {children}
