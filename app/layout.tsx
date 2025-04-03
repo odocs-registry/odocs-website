@@ -18,20 +18,20 @@ const firaCode = Fira_Code({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ODocs - Version-Aware AI Code Generation',
+    default: 'ODocs - Documentation Registry for AI Code Generation',
     template: '%s | ODocs',
   },
-  description: 'Ensure your AI coding assistant generates accurate, version-appropriate code with ODocs.',
-  keywords: ['AI code generation', 'documentation registry', 'framework versions', 'developer tools'],
+  description: 'Enables your AI coding assistant generates accurate, version-appropriate code on first try.',
+  keywords: ['AI code generation', 'Vibe coding', 'documentation registry', 'framework versions', 'developer tools'],
   metadataBase: new URL('https://odocs.dev'),
   openGraph: {
     title: 'ODocs - Open Documentation Registry for AI Code Generation',
-    description: 'Solve version mismatch issues in AI-generated code with ODocs',
+    description: 'Enables your AI coding assistant generates accurate, version-appropriate code on first try.',
     url: 'https://odocs.dev',
     siteName: 'ODocs',
     images: [
       {
-        url: '/images/odocs-og-image.png',
+        url: '/images/odocs-logo.svg',
         width: 1200,
         height: 630,
         alt: 'ODocs - Open Documentation Registry for AI Code Generation',
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ODocs - Version-Aware AI Code Generation',
-    description: 'Solve version mismatch issues in AI-generated code with ODocs',
+    title: 'ODocs - Open Documentation Registry for AI Code Generation',
+    description: 'Enables your AI coding assistant generates accurate, version-appropriate code on first try.',
     creator: '@odocs_dev',
-    images: ['/images/odocs-twitter-image.png'],
+    images: ['/images/odocs-logo.svg'],
   },
   robots: {
     index: true,
@@ -63,6 +63,7 @@ export const metadata: Metadata = {
       { url: '/favicon.ico' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
     ],
     apple: [
       { url: '/apple-touch-icon.png' },

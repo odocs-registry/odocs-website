@@ -6,9 +6,9 @@ import { EXTERNAL_LINKS } from "@/components/constants";
 export const metadata = {
   title: "ODocs - Open Documentation Registry for AI Code Generation",
   description:
-    "An open-source initiative to solve version blindness in AI code generation through a standardized documentation registry.",
+    "An open-source project that helps AI-generated code stay up-to-date by providing a standardized, version-aware documentation system optimized for LLM consumption.",
   keywords:
-    "documentation registry, AI code generation, framework versions, open source, developer tools, version blindness, Docker Hub for documentation",
+    "documentation registry, AI code generation, vibe coding, framework versions, open source, developer tools, version blindness, Docker Hub for documentation",
 };
 
 export default function Home() {

@@ -50,27 +50,6 @@ export default function BlogLayout({
                 </div>
               </div>
 
-              {/* Newsletter */}
-              {/* <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <h3 className="text-xl font-bold mb-4">Subscribe</h3>
-                <p className="text-gray-300 mb-4 text-sm">
-                  Get the latest ODocs updates right in your inbox.
-                </p>
-                <form className="space-y-3">
-                  <input 
-                    type="email" 
-                    placeholder="Your email address" 
-                    className="w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  />
-                  <button 
-                    type="submit"
-                    className="w-full px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition text-sm"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div> */}
-
               {/* GitHub CTA */}
               <div className="mt-8 bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-6 rounded-lg text-center">
                 <h3 className="text-lg font-bold mb-2">Join ODocs on GitHub</h3>

@@ -5,8 +5,8 @@ import { blogPosts } from './_data/metadata';
 import './blog.css'
 
 export const metadata = {
-  title: 'ODocs Blog - Insights on Documentation for AI Code Generation',
-  description: 'Latest news, articles, and insights about the Open Documentation Registry for AI Code Generation.',
+  title: 'ODocs - Open Documentation Registry for AI Code Generation',
+  description: 'Latest news, articles, and insights about the Open Documentation Registry, AI Code Generation etc.,',
 };
 
 export default function BlogIndexPage() {
