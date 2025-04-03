@@ -238,7 +238,7 @@ export default async function ProductPage({ params }) {
           </h2>
 
           <div className="prose prose-invert prose-lg max-w-none">
-            <p className="text-lg md:text-xl text-gray-300">
+            <p className="text-lg md:text-xl text-gray-300 text-center">
               ODocs is an open-source registry that connects AI coding
               assistants with version-specific documentation, ensuring they
               generate compatible code on the first try.
