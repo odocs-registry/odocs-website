@@ -557,7 +557,7 @@ $ odocs serve
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition"
               >
-                Try the Hono Prototype
+                Try the Prototype
               </Link>
             </div>
           </div>
